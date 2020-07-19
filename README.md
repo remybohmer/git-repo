@@ -1,5 +1,8 @@
-# repo
+# Disclaimer
+This is a fork of the original git-repo tool at: https://gerrit.googlesource.com/git-repo/
+It contains specific patches that are not intended for wide use.
 
+# repo
 Repo is a tool built on top of Git.  Repo helps manage many Git repositories,
 does the uploads to revision control systems, and automates parts of the
 development workflow.  Repo is not meant to replace Git, only to make it
@@ -32,21 +35,16 @@ So please search those sites first.
 
 ## Install
 
-Many distros include repo, so you might be able to install from there.
-```sh
-# Debian/Ubuntu.
-$ sudo apt-get install repo
-
-# Gentoo.
-$ sudo emerge dev-vcs/repo
-```
-
-You can install it manually as well as it's a single script.
+You can install it via it's single script.
 ```sh
 $ mkdir -p ~/.bin
 $ PATH="${HOME}/.bin:${PATH}"
-$ curl https://storage.googleapis.com/git-repo-downloads/repo > ~/.bin/repo
+$ curl https://raw.githubusercontent.com/remybohmer/git-repo/stable/repo > ~/.bin/repo
 $ chmod a+rx ~/.bin/repo
+
+# Example manifest:
+$ repo init -u https://github.com/remybohmer/demo-manifests.git
+$ repo sync
 ```
 
 
