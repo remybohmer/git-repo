@@ -2477,8 +2477,6 @@ class Project(object):
         for key in ['user.name', 'user.email']:
           if m.Has(key, include_defaults=False):
             self.config.SetString(key, m.GetString(key))
-        self.config.SetString('filter.lfs.smudge', 'git-lfs smudge --skip -- %f')
-        self.config.SetString('filter.lfs.process', 'git-lfs filter-process --skip')
         if self.manifest.IsMirror:
           self.config.SetString('core.bare', 'true')
         else:
